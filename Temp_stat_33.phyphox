@@ -95,7 +95,7 @@ Il valore di pressione viene mediato attarverso il valore statistico
       <output as="stddev">deviation</output>
     </average>
     
-    <!-- blocco per il conteggio dei valori di pressione -->
+    <!-- blocco per il conteggio dei valori di temperatura -->
     <count>
       <input clear="false">temperatura</input>
       <output as="count">count</output>
@@ -137,7 +137,7 @@ Il valore di pressione viene mediato attarverso il valore statistico
   <export>
     <set name="Temperatura_Arduino">
       <data name="tempo (s)">tempo</data>
-      <data name="temperatura (°C)">pressione</data>
+      <data name="temperatura (°C)">temperatura</data>
     </set>
     <set name="Statistica">
       <data name="Bin start (°C)">binStart</data>
