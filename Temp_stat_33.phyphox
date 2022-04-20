@@ -59,7 +59,7 @@ Il valore di pressione viene mediato attarverso il valore statistico
         <input axis="y" style="vbars" color="E0E040" lineWidth="0.9">binCount</input>
       </graph>
       <!-- oggetto editabile -->
-      <edit label="Ampiezza" unit="°C" default="0.01" signaed="false">
+      <edit label="Ampiezza" unit="°C" default="0.005" signaed="false">
         <output>binSize</output>
       </edit>
       <value label="Temperatura" size="1" precision="3" unit="°C">
