@@ -62,7 +62,7 @@ Il valore di pressione viene mediato attarverso il valore statistico
   
   <!-- blocco per esportare i dati -->
   <export>
-    <!--<set name="Temperatura_Arduino">
+    <!--<set name="Temperatura_Aruino">
       <data name="tempo (s)">tempo</data>
       <data name="temperatura (°C)">temperatura</data>
     </set>
