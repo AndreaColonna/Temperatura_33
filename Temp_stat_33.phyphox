@@ -19,7 +19,9 @@ Il valore di pressione viene mediato attarverso il valore statistico
   <data-containers>
     <!-- variabili per le letture del sensore -->
     <container size="0" static="false" init="">temperatura</container> <!-- Variabile in cui verranno memorizzati i valori di temperatura letti dal sensore -->
-     <container size="0" static="false" init="">umidita</container> <!-- Variabile in cui verranno memorizzati i valori di umidità letti dal sensore -->
+    <container size="0" static="false" init="">errtemp</container> <!-- Variabile in cui verranno memorizzati i valori di temperatura letti dal sensore -->
+    <container size="0" static="false" init="">umidita</container> <!-- Variabile in cui verranno memorizzati i valori di umidità letti dal sensore -->
+    <container size="0" static="false" init="">errum</container> <!-- Variabile in cui verranno memorizzati i valori di temperatura letti dal sensore -->
     <container size="0" static="false" init="">tempo</container>     <!-- Variabile in cui verranno memorizzati i valori di tempo letti dal sensore -->
   </data-containers>
   
@@ -27,7 +29,9 @@ Il valore di pressione viene mediato attarverso il valore statistico
     <!-- Da arduino a phyphox BLE -->
     <bluetooth name="Mobile" mode="notification" rate ="1" subscribeOnStart="false" id="Sense">
       <output char="cddf1002-30f7-4671-8b43-5e40ba53514a" conversion="float32LittleEndian" offset="0">temperatura</output>
-      <output char="cddf1002-30f7-4671-8b43-5e40ba53514a" conversion="float32LittleEndian" offset="4">umidita</output>
+      <output char="cddf1002-30f7-4671-8b43-5e40ba53514a" conversion="float32LittleEndian" offset="4">errtemp</output>
+      <output char="cddf1002-30f7-4671-8b43-5e40ba53514a" conversion="float32LittleEndian" offset="8">umidita</output>
+      <output char="cddf1002-30f7-4671-8b43-5e40ba53514a" conversion="float32LittleEndian" offset="12">errum</output>
       <output char="cddf1002-30f7-4671-8b43-5e40ba53514a" extra="time">tempo</output>
     </bluetooth>
   </input>
@@ -39,14 +43,14 @@ Il valore di pressione viene mediato attarverso il valore statistico
       <value label="Temperatura" size="1" precision="3" unit="°C">
         <input>temperatura</input>
       </value>
-     <!-- <value label="Temperatura Media" precision="3" scientific="false" unit="°C" factor="1">
-        <input>average</input>
-      </value> 
-      <value label="deviazione standard" precision="3" scientific="false" unit="°C" factor="1">
-        <input>deviation</input>
-      </value>  -->
+      <value label="devst T" precision="3" scientific="false" unit="°C" factor="1">
+        <input>errtem</input>
+      </value>
       <value label="Umidità" precision="0" scientific="false" unit="%" factor="1">
         <input>umidita</input>
+      </value>
+      <value label="stdev U" precision="0" scientific="false" unit="%" factor="1">
+        <input>errtem</input>
       </value>
     </view>
   </views>
