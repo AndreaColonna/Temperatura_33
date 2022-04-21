@@ -44,7 +44,7 @@ Il valore di pressione viene mediato attarverso il valore statistico
         <input>temperatura</input>
       </value>
       <value label="devst T" precision="3" scientific="false" unit="°C" factor="1">
-        <input>errtem</input>
+        <input>errtemp</input>
       </value>
       <value label="Umidità" precision="0" scientific="false" unit="%" factor="1">
         <input>umidita</input>
