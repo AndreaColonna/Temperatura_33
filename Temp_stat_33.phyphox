@@ -36,26 +36,10 @@ Il valore di pressione viene mediato attarverso il valore statistico
   
   <views>   <!-- schermate -->
     <view label= "Temperatura Arduino">
-      <!-- grafico temperatura tempo 
-      <graph label="Temperatura" aspectRatio="2.5" style="lines" lineWidth="1" partialUpdate= "true" history="1" labelX="t" labelY="T" labelZ="" unitX="s" unitY="°C" unitZ="" logX="false" xPrecision="3" yPrecision="5" zPrecision="3" scaleMinX="auto" scaleMaxX="auto" scaleMinY="auto" scaleMaxY="auto" scaleMinZ="auto" scaleMaxZ="auto" minX="0" maxX="0" minY="0" maxY="0" minZ="0" maxZ="0" mapWidth="0">
-        <input axis="x">tempo</input>
-        <input axis="y">temperatura</input>
-      </graph>
-      <!-- grafico istogramma -->
-      <graph label="Istogramma" labelX="Temperatura" labelY="Conteggi" partialUpdate="false" unitX="°C" xPrecision="6">
-        <input axis="x">gaussianX</input>
-        <input axis="y" style="lines" lineWidth="2">gaussian</input>
-        <input axis="x">binStart</input>
-        <input axis="y" style="vbars" color="E0E040" lineWidth="0.9">binCount</input>
-      </graph> -->
-      <!-- oggetto editabile 
-      <edit label="Ampiezza" unit="°C" default="0.005" signaed="false">
-        <output>binSize</output>
-      </edit> -->
-      <!-- <value label="Temperatura" size="1" precision="3" unit="°C">
+      <value label="Temperatura" size="1" precision="3" unit="°C">
         <input>temperatura</input>
       </value>
-      <value label="Temperatura Media" precision="3" scientific="false" unit="°C" factor="1">
+     <!-- <value label="Temperatura Media" precision="3" scientific="false" unit="°C" factor="1">
         <input>average</input>
       </value> 
       <value label="deviazione standard" precision="3" scientific="false" unit="°C" factor="1">
