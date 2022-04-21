@@ -21,18 +21,6 @@ Il valore di pressione viene mediato attarverso il valore statistico
     <container size="0" static="false" init="">temperatura</container> <!-- Variabile in cui verranno memorizzati i valori di temperatura letti dal sensore -->
      <container size="0" static="false" init="">umidita</container> <!-- Variabile in cui verranno memorizzati i valori di umidità letti dal sensore -->
     <container size="0" static="false" init="">tempo</container>     <!-- Variabile in cui verranno memorizzati i valori di tempo letti dal sensore -->
-    <!-- variabili per la statistica -->
-    <container size="1">binSize</container>
-    <container size="0">binStart</container>
-    <container size="0">binCount</container>
-    <container size="1">average</container>
-    <container size="1">deviation</container>
-    <container size="1">count</container>
-    <!-- variabili per la curva teorica gaussiana -->
-    <container size="1">minX</container>
-    <container size="1">maxX</container>
-    <container size="500">gaussianX</container>
-    <container size="500">gaussian</container>
   </data-containers>
   
   <input>
@@ -48,7 +36,7 @@ Il valore di pressione viene mediato attarverso il valore statistico
   
   <views>   <!-- schermate -->
     <view label= "Temperatura Arduino">
-      <!-- grafico temperatura tempo -->
+      <!-- grafico temperatura tempo 
       <graph label="Temperatura" aspectRatio="2.5" style="lines" lineWidth="1" partialUpdate= "true" history="1" labelX="t" labelY="T" labelZ="" unitX="s" unitY="°C" unitZ="" logX="false" xPrecision="3" yPrecision="5" zPrecision="3" scaleMinX="auto" scaleMaxX="auto" scaleMinY="auto" scaleMaxY="auto" scaleMinZ="auto" scaleMaxZ="auto" minX="0" maxX="0" minY="0" maxY="0" minZ="0" maxZ="0" mapWidth="0">
         <input axis="x">tempo</input>
         <input axis="y">temperatura</input>
@@ -59,92 +47,41 @@ Il valore di pressione viene mediato attarverso il valore statistico
         <input axis="y" style="lines" lineWidth="2">gaussian</input>
         <input axis="x">binStart</input>
         <input axis="y" style="vbars" color="E0E040" lineWidth="0.9">binCount</input>
-      </graph>
-      <!-- oggetto editabile -->
+      </graph> -->
+      <!-- oggetto editabile 
       <edit label="Ampiezza" unit="°C" default="0.005" signaed="false">
         <output>binSize</output>
-      </edit>
-      <value label="Temperatura" size="1" precision="3" unit="°C">
+      </edit> -->
+      <!-- <value label="Temperatura" size="1" precision="3" unit="°C">
         <input>temperatura</input>
       </value>
       <value label="Temperatura Media" precision="3" scientific="false" unit="°C" factor="1">
         <input>average</input>
-      </value>
+      </value> 
       <value label="deviazione standard" precision="3" scientific="false" unit="°C" factor="1">
         <input>deviation</input>
-      </value>
-      <value label="Conteggi" precision="0" scientific="false" unit="" factor="1">
-        <input>count</input>
+      </value>  -->
+      <value label="Umidità" precision="0" scientific="false" unit="%" factor="1">
+        <input>umidita</input>
       </value>
     </view>
   </views>
   
-  <!-- Bolocco operazioni -->
+  <!-- Blocco operazioni -->
   <analysis sleep="0" onUserInput="false">
-    
-    <!-- blocco per il calcolo del numero di intervalli -->
-    <binning>
-      <input clear="false">temperatura</input>
-      <input as="dx" clear="false">binSize</input>
-      <output clear="true">binStart</output>
-      <output clear="true">binCount</output>
-    </binning>
-    
-    <!-- blocco per il calcolo del valor medio  -->
-    <average>
-      <input clear="false">temperatura</input>
-      <output as="average">average</output>
-      <output as="stddev">deviation</output>
-    </average>
-    
-    <!-- blocco per il conteggio dei valori di temperatura -->
-    <count>
-      <input clear="false">temperatura</input>
-      <output as="count">count</output>
-    </count>
-    
-    <!-- Blocco per il cacolo dei punti della Gaussiana -->
-    <subrange> <!-- primo elemento di binStart -->
-      <input clear="false">binStart</input>
-      <input as="from" type="value">0</input>
-      <input as="length" type="value">1</input>
-      <output>minX</output>
-    </subrange>
-    
-    <!-- blocco per calcolare i valori max di X -->
-    <max>
-      <input as="y" clear="false">binStart</input>
-      <output as="max">maxX</output>
-    </max>
-    
-    <!-- blocco per calcolare le ascisse della gaussiana -->
-    <ramp>
-      <input as="start" clear="false">minX</input>
-      <input as="stop" clear="false">maxX</input>
-      <output>gaussianX</output>
-    </ramp>
-    
-    <!-- blocco per il calcolo di y della gaussiana -->
-    <formula formula="[4]*[5]*exp(-0.5*([1_]-[2])^2/[3]^2)/(2.506628*[3])">
-      <input clear="false">gaussianX</input>
-      <input clear="false">average</input>
-      <input clear="false">deviation</input>
-      <input clear="false">binSize</input>
-      <input clear="false">count</input>
-      <output>gaussian</output>
-    </formula>
+
   </analysis>
   
   <!-- blocco per esportare i dati -->
   <export>
-    <set name="Temperatura_Arduino">
+    <!--<set name="Temperatura_Arduino">
       <data name="tempo (s)">tempo</data>
       <data name="temperatura (°C)">temperatura</data>
     </set>
     <set name="Statistica">
       <data name="Bin start (°C)">binStart</data>
       <data name="Bin count ">binCount</data>
-    </set>
+    </set> -->
   </export>
   
 </phyphox>
