@@ -50,7 +50,7 @@ Il valore di pressione viene mediato attarverso il valore statistico
         <input>umidita</input>
       </value>
       <value label="stdev U" precision="0" scientific="false" unit="%" factor="1">
-        <input>errtem</input>
+        <input>errum</input>
       </value>
     </view>
   </views>
