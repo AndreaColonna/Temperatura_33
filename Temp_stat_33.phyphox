@@ -9,7 +9,7 @@ Il valore di pressione viene mediato attarverso il valore statistico
   <category>Esperimenti con ARDUINO</category>
   
   <description>
-    Mostra la temperatura misurata da Arduino in °C e la media attraverso la statistica. Nella scheda Arduino 33 BLE sense deve essere installato lo scratch "SempliceTemperatura" che attiva solo il sensore di pressione. La configurazione della scheda ha un piccolo difetto il valore del sensore di pressione  viene alterato dalla misura dei valori degli altri sensori. Questo metodo evita tali interferenze.       
+    Mostra la temperatura misurata da Arduino in °C e la media attraverso la statistica. Scheda Arduino 33 BLE sense deve essere installato lo scratch "SempliceTemperatura" che attiva solo il sensore di pressione. La configurazione della scheda ha un piccolo difetto il valore del sensore di pressione  viene alterato dalla misura dei valori degli altri sensori. Questo metodo evita tali interferenze.       
   </description>
   
   <icon>ATs</icon>
